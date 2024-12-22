@@ -1,0 +1,17 @@
+.home{
+    background-color: #1A1A1A;
+     
+}
+.home h1, .home h2, .home p, .home h5 {
+    color: white;  /* Set text color to white for headings and paragraphs */
+  }
+  .page-container {
+     display: flex; 
+     flex-direction: column; 
+     min-height: 100vh; 
+    } 
+    .content-wrap {
+       flex: 1; 
+      }
+        /* Center the pagination on small screens */ } }
+

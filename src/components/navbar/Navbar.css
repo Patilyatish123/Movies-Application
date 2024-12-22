@@ -1,0 +1,24 @@
+.navbar {
+  background-color: rgb(58, 56, 56);
+}
+
+.navbar-active {
+  color: yellow;
+}
+button.navbar-toggler {
+  background-color: white;
+  border-color: solid white;
+  color: darkgrey;
+}
+
+body {
+  padding-top: 60px;
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+  color: white; /* Set the background color to white */
+}
+.navbar-toggler:hover {
+  border-color: grey; /* Set the border color to gray on hover */
+}

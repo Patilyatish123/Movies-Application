@@ -1,0 +1,33 @@
+.page-number {
+  background-color: #007bff; /* Default background color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.page-number:hover {
+  background-color: #0056b3; /* Hover background color */
+}
+
+.page-number.active {
+  background-color: #0056b3; /* Active background color */
+}
+
+.page-number:focus {
+  outline: none;
+}
+.pagination {
+  display: flex;
+  justify-content: end;
+}
+
+/* Additional styling for Home component if needed */
+@media (max-width: 576px) {
+  .pagination {
+    justify-content: center; /* Center the pagination on small screens */
+  }
+}
