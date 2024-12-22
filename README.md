@@ -1,12 +1,23 @@
-<<<<<<< HEAD
-# Movies-Application
-=======
-# React + Vite
+# MovieDB Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+The MovieDB Application is a responsive web app that allows users to explore popular, top-rated, and upcoming movies. Developed with React, the app integrates data from The Movie Database (TMDB) API using Axios and employs Bootstrap for styling and responsiveness. The application supports advanced search capabilities and client-side pagination for a seamless user experience.
 
-Currently, two official plugins are available:
+## Features
+- **Explore Movies**: Browse popular, top-rated, and upcoming movies.
+- **Search Functionality**: Search for movies by name.
+- **Movie Details**: View detailed information about each movie.
+- **Responsive Design**: Optimized for various screen sizes using Bootstrap.
+- **Client-side Pagination**: Efficiently browse through large sets of movie data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
->>>>>>> 8d21c6c (MovieDb Project)
+## Technologies Used
+- **React**: Front-end library for building user interfaces.
+- **Axios**: HTTP client for making API requests.
+- **TMDB API**: Source of movie data.
+- **Bootstrap**: Framework for responsive design.
+- **React Router**: Library for routing and navigation.
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/moviedb.git
