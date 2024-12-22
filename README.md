@@ -21,3 +21,8 @@ The MovieDB Application is a responsive web app that allows users to explore pop
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/moviedb.git
+
+## Deployement
+1. Run the application:
+   ```bash
+   https://moviedb-application.netlify.app/
