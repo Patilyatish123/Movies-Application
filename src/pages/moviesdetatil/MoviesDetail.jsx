@@ -4,7 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router";
 import Pagination from "../../components/pagination/Pagination";
 import "./MoviesDetail.css";
-import CastCard from "../../components/castcard/CastCard";
+import CastCard from "../../components/castCard/CastCard";
 export default function MoviesDetail() {
   const { id } = useParams();
   const [data, setData] = useState(null);
