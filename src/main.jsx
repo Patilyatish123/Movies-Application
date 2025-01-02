@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { children } from "react";
 import { createRoot } from "react-dom/client";
+import "./index.css";
 import {
 
   createBrowserRouter,
@@ -13,7 +14,6 @@ import Upcoming from "./pages/upcoming/Upcoming.jsx";
 import Error from "./pages/error/Error.jsx";
 import SearchResults from "./components/search/SearchResults.jsx";
 import MoviesDetail from "./pages/moviesdetatil/MoviesDetail.jsx";
-
 const router = createBrowserRouter([
   {
     path: "/",

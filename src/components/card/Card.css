@@ -1,19 +1,37 @@
 .custom-cards {
-  width: 200px;
   color: white;
-  background: transparent;
   border: none;
   transition: all 0.3s ease-in-out;
+  max-width: 12rem;
+  width: 100%;
+  background: transparent;
 }
+.custom-cards img {
+ height: 80%;
+}
+
+
+@media (max-width: 576px) {
+  .custom-cards {
+    width: 60vw;
+  }
+  
+}
+
+
 .custom-cards:hover {
   cursor: pointer;
   transform: scale(1.1);
+
+}
+.custom-cards:hover img {
+  box-shadow: 0 0 15px #00ccff;
 }
 .card-img-top {
-  width: 210px;
-  height: 300px;
   border-radius: 5px;
+  
 }
+
 .card-body {
   padding: 0 20px;
 }

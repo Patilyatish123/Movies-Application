@@ -27,7 +27,8 @@
 
 /* Additional styling for Home component if needed */
 @media (max-width: 576px) {
-  .pagination {
-    justify-content: center; /* Center the pagination on small screens */
+  .custom-pagination {
+    justify-content: center !important;
+    align-items: center; /* Center the pagination on small screens */
   }
 }

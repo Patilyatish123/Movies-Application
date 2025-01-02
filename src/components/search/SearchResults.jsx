@@ -53,7 +53,7 @@ const SearchResults = () => {
             <Card
               poster_path={movie.poster_path}
               title={movie.title}
-              rating={movie.vote_average}
+              rating={Math.round(movie.vote_average * 10)/ 10}
             />
           </div>
         ))}

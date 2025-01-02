@@ -68,8 +68,14 @@ const Navbar = ({ onSearchResults }) => {
     <>
       <nav className="navbar navbar-expand-lg fixed-top mb-6">
         <div className="container">
-          <a className="navbar-brand text-white" href="#">
-            MovieDb
+          <a className="navbar-brand " href="#">
+          <NavLink
+                  className="nav-link color-white"
+                  aria-current="page"
+                  to="/"
+                >
+                  <span > MovieDB</span>
+                </NavLink>
           </a>
 
           {/* Toggle Button */}
@@ -87,19 +93,32 @@ const Navbar = ({ onSearchResults }) => {
 
           {/* Collapsible Section */}
           <div className="collapse navbar-collapse " id="navbarTogglerDemo03">
-            <ul className="navbar-nav ms-auto mb-3  mb-lg-0">
-              <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/">
-                  Home
+            <ul className="navbar-nav ms-auto mb-3 gap-3  me-3 mb-lg-0">
+              <li className="nav-item ">
+                <NavLink
+                  className="nav-link "
+                  activeclassname=""
+                  aria-current="page"
+                  to="/"
+                >
+                  <span> Home</span>
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link " to="/top-rated">
+                <NavLink
+                  className="nav-link "
+                  activeclassname="active"
+                  to="/top-rated"
+                >
                   Top Rated
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link navbar-active" to="/upcoming">
+                <NavLink
+                  className="nav-link "
+                  activeclassname="active"
+                  to="/upcoming"
+                >
                   Upcoming
                 </NavLink>
               </li>
@@ -120,7 +139,7 @@ const Navbar = ({ onSearchResults }) => {
                 onChange={handleSearchChange}
               />
               <button
-                className="btn btn-secondary"
+                className="btn btn-info"
                 type="submit"
                 results={onSearchResults}
               >

@@ -3,25 +3,21 @@ import "./Pagination.css";
 
 export default function Pagination({ currentPage, totalPages, onPageChange }) {
   return (
-    <div className="pagination w-100 pb-2 pe-3 gap-1">
+    <div className="pagination-container d-flex justify-content-end align-items-center gap-4 text-white w-100 pb-2 pe-3  custom-pagination">
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="btn btn-success"
+        className="btn btn-info"
       >
         Prev
       </button>
-      {Array.from({ length: totalPages }, (_, index) => (
-        <button
-          key={index}
-          onClick={() => onPageChange(index + 1)}
-          className={`page-number ${index + 1 === currentPage ? "active" : ""}`}
-        >
-          {index + 1}
-        </button>
-      ))}
+
+      <div className="current-page-display">
+        Page {currentPage} of {totalPages}
+      </div>
+
       <button
-        className="btn btn-success"
+        className="btn btn-info"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >

@@ -6,3 +6,9 @@
 .content-wrap {
   flex: 1;
 }
+@media (min-width: 992px) {
+  .custom-col {
+    flex: 0 0 20%; /* Each column takes up 20% of the row on large screens */
+    max-width: 20%;
+  }
+}

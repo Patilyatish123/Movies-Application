@@ -1,10 +1,3 @@
-.navbar {
-  background-color: rgb(58, 56, 56);
-}
-
-.navbar-active {
-  color: yellow;
-}
 button.navbar-toggler {
   background-color: white;
   border-color: solid white;
@@ -12,13 +5,34 @@ button.navbar-toggler {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .navbar-toggler-icon {
   background-color: white;
-  color: white; /* Set the background color to white */
+  color: white; 
 }
 .navbar-toggler:hover {
-  border-color: grey; /* Set the border color to gray on hover */
+  border-color: grey; 
 }
+.navbar {
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 7px #00ccff;
+}
+.navbar a {
+  color: white;
+}
+.nav-link {
+  color: white;
+  transition: color 0.3s, border-bottom 0.3s !important;
+  display: inline-block !important;
+  transition: color 0.5s ease !important;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #00ccff !important; 
+
+  transition: width 0.3s ease !important;
+}
+

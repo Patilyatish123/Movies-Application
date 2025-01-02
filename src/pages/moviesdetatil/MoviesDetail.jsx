@@ -4,11 +4,10 @@ import axios from "axios";
 import { useParams } from "react-router";
 import Pagination from "../../components/pagination/Pagination";
 import "./MoviesDetail.css";
-import CastCard from "../../components/castCard/CastCard";
+import CastCard from "../../components/castcard/CastCard";
 export default function MoviesDetail() {
   const { id } = useParams();
   const [data, setData] = useState(null);
-  ``;
   const [cast, setCast] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
@@ -29,7 +28,7 @@ export default function MoviesDetail() {
         const response = await axios.get(
           `https://api.themoviedb.org/3/movie/${id}/credits?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US`
         );
-        setCast(response.data.cast);
+        setCast(response.data.cast.filter(member => member.profile_path));
       } catch (error) {
         console.error("Error fetching cast data:", error);
       }
@@ -50,7 +49,7 @@ export default function MoviesDetail() {
 
   return (
     <>
-      {data && (
+      {data ? (
         <div>
           <div className="px-5 pt-5 pb-3">
             <div className="d-flex justify-content-center  bg-primary-subtle  rounded-2 flex-column-md">
@@ -61,22 +60,30 @@ export default function MoviesDetail() {
                     alt=""
                     style={{ height: "180px", width: "120px" }}
                   />
-                  <div>
+                  <div className="movieinfo">
                     <h1 className="text-light">{data.title}</h1>
-                    <p className=" fs-5 text-info movieinfo">
-                      Rating : {data.vote_average}
+                    <p className="  movieinfo rating">
+                      Rating : {Math.round(data.vote_average * 10) / 10}
                     </p>
-                    <p className="text-light-emphasis movieinfo">
-                      {data.runtime} min
+                    <div className="moviedetails d-flex gap-3 p-0 m-0">
+                    <p className="text-white m-0 text-center  rounded px-2 py-1  bg-info ">
+                    {data.runtime ? `${data.runtime} min` : "Runtime not available"}
+                    
                     </p>
-                    <span className="text-light-emphasis movieinfo">
-                      Release Date : {data.release_date}
-                    </span>
+                    <p className="text-light-emphasis m-0 text-center   px-2 py-1 h-100">{Array.isArray(data.genres) ? data.genres.map((genre) => genre.name).join(", ") : "Genres not available"}</p>
+                    </div>
+                    
+                    <p className="text-light-emphasis pt-3 m-0  ">
+                    Release Date: {new Date(data.release_date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                    </p>
                   </div>
                 </div>
+                <div className="overview">
                 <h1 className="text-light ">Overview</h1>
-                <p>{data.overview}</p>
+                <p className="text-light-emphasis paragraph">{data.overview}</p>
+                </div>
               </div>
+
               <div className="box2">
                 <img
                   className="backdropimg"
@@ -88,11 +95,11 @@ export default function MoviesDetail() {
           </div>
           <div className="cast">
             <div className="row m-0 mt-4">
-              <h1 className="text-light ps-4">Cast</h1>
+              <h1 className="text-light text-center fs-2 text-secondary">Cast</h1>
               {currentCast.map((member) => (
                 <div
-                  className="custom-col-lg-6 text-white mb-5"
-                  key={member.cast_id}
+                  className="custom-col-lg-6  mb-4"
+                  key={member.cast_id || member.id}
                 >
                   <CastCard
                     name={member.name}
@@ -111,6 +118,8 @@ export default function MoviesDetail() {
             />
           </div>
         </div>
+         ) : (
+          <p>Loading...</p>
       )}
     </>
   );
