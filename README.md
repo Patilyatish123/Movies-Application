@@ -24,5 +24,5 @@ The MovieDB Application is a responsive web app that allows users to explore pop
 
 ## Deployement
 1. Run the application:
-   ```bash
-   https://moviedb-application.netlify.app/
+   ## Live Demo
+Check out the live demo: [MovieDb App](https://moviedb-yp.netlify.app)
